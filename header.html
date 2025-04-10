@@ -1,0 +1,531 @@
+<div class="hidden md:block">
+  <!-- Banner promocional -->
+  <div
+    class="w-full bg-[#005cff] px-4 py-2 text-center text-sm font-bold text-white"
+  >
+    Ganhe <span class="rounded-lg bg-[#6220C1] px-1">R$10,00</span> de desconto
+    no seu primeiro pedido. Utilize o cupom
+    <span class="font-thin italic">DESCONTO10</span>
+  </div>
+
+  <!-- Cabeçalho principal -->
+  <div class="relative bg-white">
+    <div
+      class="container mx-auto flex max-w-[1300px] items-center justify-between py-4"
+    >
+      <div class="flex items-center gap-16">
+        <!-- Logo -->
+        <img src="./assets/logo.png" alt="Logo" class="h-5 w-32" />
+
+        <!-- Barra de busca -->
+        <div id="search-bar" class="relative mx-4 max-w-xl flex-1">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Digite aqui o que você procura"
+            class="w-[600px] rounded-lg border border-[#dddddd] px-6 py-2 placeholder:font-semibold placeholder:text-black"
+          />
+          <button id="search-button" class="absolute top-0 right-0 h-full">
+            <img
+              src="./assets/search-icon.png"
+              alt="Buscar"
+              class="h-5 w-5 text-black"
+            />
+          </button>
+          <div
+            id="search-results"
+            class="hidden absolute top-full mt-2 w-[600px] rounded-lg border border-[#dddddd] bg-white px-4 py-2 text-sm text-black shadow-md"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Conta do usuário e carrinho -->
+      <div class="flex items-center gap-6">
+        <div
+          class="flex items-center justify-center gap-2 text-sm font-semibold"
+        >
+          <img src="./assets/user.png" alt="Usuário" />
+          <div>
+            <div class="leading-4 text-[#005cff]">Olá,</div>
+            <div class="leading-4 font-medium">Nome cliente!</div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img src="./assets/cart-icon.png" alt="Carrinho" class="h-6 w-6" />
+          <div
+            class="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#005cff] text-xs text-white"
+          >
+            2
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu de categorias -->
+    <div class="container mx-auto max-w-[1300px]">
+      <div
+        class="flex items-center justify-between gap-6 overflow-x-auto py-3 whitespace-nowrap"
+      >
+        <div class="group">
+          <button
+            id="toggle-categories"
+            class="flex cursor-pointer items-center font-medium"
+          >
+            <img
+              src="./assets/menu-icon.png"
+              alt="Menu"
+              class="mr-2 h-3 w-35"
+            />
+            Todas as Categorias
+          </button>
+          <div
+            id="categories-dropdown"
+            class="hidden absolute top-[calc(100%-8px)] left-1/2 z-[1000] w-[1300px] -translate-x-1/2 bg-white shadow-lg"
+          >
+            <!-- Conteúdo do dropdown -->
+            <div class="grid grid-cols-5 gap-4 bg-white shadow-lg">
+              <div class="space-y-4 bg-[#F5F5F5] py-6 pl-6">
+                <ul class="h-[300px] space-y-2 overflow-y-scroll pr-4">
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Eletrônicos
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Moda e Acessórios
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Casa e Decoração
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Esportes e Lazer
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Beleza e Saúde
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Brinquedos e Games
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Livros e Papelaria
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Automotivo
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Informática
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Ferramentas
+                    <img
+                      src="./assets/caret-right.png"
+                      alt=">"
+                      class="h-4 w-2"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6">
+                <h3 class="font-semibold text-[#005cff]">Moda</h3>
+                <ul class="space-y-2">
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Masculina
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Feminina
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Infantil
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6">
+                <h3 class="font-semibold text-[#005cff]">Casa</h3>
+                <ul class="space-y-2">
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Móveis
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Decoração
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Jardim
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6">
+                <h3 class="font-semibold text-[#005cff]">Esporte</h3>
+                <ul class="space-y-2">
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Fitness
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Camping
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Bicicletas
+                  </li>
+                </ul>
+              </div>
+              <div class="relative py-6">
+                <div
+                  class="absolute inset-0 z-10 flex flex-col items-start justify-center p-6"
+                >
+                  <h3 class="mb-2 text-2xl font-semibold text-white">
+                    Confira os <br />
+                    Produtos <br />
+                    <span class="font-bold">
+                      Que acabaram <br />
+                      De chegar
+                    </span>
+                  </h3>
+                  <button
+                    class="mt-8 cursor-pointer rounded-lg border px-4 py-2 text-sm font-bold text-white uppercase hover:text-[#005cff]"
+                  >
+                    Ver todos
+                  </button>
+                </div>
+                <img
+                  src="./assets/mug-2.png"
+                  alt="Mug"
+                  class="h-[300px] w-[230px] overflow-hidden rounded-lg brightness-50"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outros departamentos -->
+        <div class="group">
+          <button
+            id="toggle-electronics"
+            class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+          >
+            Eletrônicos
+          </button>
+          <div
+            id="electronics-dropdown"
+            class="hidden absolute top-[calc(100%-8px)] left-1/2 z-[1000] w-[1300px] -translate-x-1/2 bg-white shadow-lg"
+          >
+            <!-- Conteúdo do dropdown -->
+            <div class="grid grid-cols-5 gap-4 bg-white shadow-lg">
+              <div class="space-y-4 p-6">
+                <h3 class="font-bold">Eletrônicos</h3>
+                <ul class="space-y-2 pr-4">
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Smartphones
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Notebooks
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Tablets
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    TVs
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Áudio
+                  </li>
+                  <li
+                    class="flex cursor-pointer items-center justify-between text-[#707070] hover:text-[#005cff]"
+                  >
+                    Câmeras
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6">
+                <ul class="mt-10 space-y-2">
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    iPhone
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Samsung
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Xiaomi
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Motorola
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6">
+                <ul class="mt-10 space-y-2">
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Apple
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Dell
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Lenovo
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    HP
+                  </li>
+                </ul>
+              </div>
+              <div class="space-y-4 p-6">
+                <ul class="mt-10 space-y-2">
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Fones de ouvido
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Carregadores
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Cabos
+                  </li>
+                  <li
+                    class="cursor-pointer text-[#707070] hover:text-[#005cff]"
+                  >
+                    Cases
+                  </li>
+                </ul>
+              </div>
+              <div class="relative py-6">
+                <div
+                  class="absolute inset-0 z-10 flex flex-col items-start justify-center p-6"
+                >
+                  <h3 class="mb-2 text-2xl font-semibold text-white">
+                    Confira os <br />
+                    Produtos <br />
+                    <span class="font-bold">
+                      Que acabaram <br />
+                      De chegar
+                    </span>
+                  </h3>
+                  <button
+                    class="mt-8 cursor-pointer rounded-lg border px-4 py-2 text-sm font-bold text-white uppercase hover:text-[#005cff]"
+                  >
+                    Ver todos
+                  </button>
+                </div>
+                <img
+                  src="./assets/mug-2.png"
+                  alt="Mug"
+                  class="h-[300px] w-[230px] overflow-hidden rounded-lg brightness-50"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="cursor-pointer text-[#707070] hover:text-[#005cff]">
+            Departamento 2
+          </button>
+          <div
+            class="hidden absolute top-full mt-2 w-64 rounded-lg border border-[#dddddd] bg-white px-4 py-2 text-sm text-black shadow-md"
+          >
+            <ul>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 1
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 2
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 3
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="cursor-pointer text-[#707070] hover:text-[#005cff]">
+            Departamento 3
+          </button>
+          <div
+            class="hidden absolute top-full mt-2 w-64 rounded-lg border border-[#dddddd] bg-white px-4 py-2 text-sm text-black shadow-md"
+          >
+            <ul>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 1
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 2
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 3
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="cursor-pointer text-[#707070] hover:text-[#005cff]">
+            Departamento 4
+          </button>
+          <div
+            class="hidden absolute top-full mt-2 w-64 rounded-lg border border-[#dddddd] bg-white px-4 py-2 text-sm text-black shadow-md"
+          >
+            <ul>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 1
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 2
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 3
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="cursor-pointer text-[#707070] hover:text-[#005cff]">
+            Departamento 5
+          </button>
+          <div
+            class="hidden absolute top-full mt-2 w-64 rounded-lg border border-[#dddddd] bg-white px-4 py-2 text-sm text-black shadow-md"
+          >
+            <ul>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 1
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 2
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 3
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="cursor-pointer text-[#707070] hover:text-[#005cff]">
+            Departamento 6
+          </button>
+          <div
+            class="hidden absolute top-full mt-2 w-64 rounded-lg border border-[#dddddd] bg-white px-4 py-2 text-sm text-black shadow-md"
+          >
+            <ul>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 1
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 2
+              </li>
+              <li class="hover:text-[#005cff] cursor-pointer">
+                Subcategoria 3
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

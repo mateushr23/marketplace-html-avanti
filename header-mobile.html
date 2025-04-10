@@ -1,0 +1,106 @@
+<div class="block md:hidden">
+  <!-- Banner promocional -->
+  <div
+    class="w-full bg-[#005cff] px-4 py-2 text-center text-sm font-bold text-white"
+  >
+    Ganhe <span class="rounded-lg bg-[#6220C1] px-1">R$10,00</span> de no seu
+    primeiro pedido. Utilize o cupom
+    <span class="font-thin italic">DESCONTO10</span>
+  </div>
+
+  <!-- Barra de navegação -->
+  <div class="relative">
+    <div class="flex items-center justify-between px-4 py-3">
+      <!-- Botão para abrir o menu mobile -->
+      <button id="mobile-menu-button" class="p-1">
+        <img src="./assets/menu-icon.png" alt="Menu" class="h-6 w-6" />
+      </button>
+
+      <!-- Logo da empresa -->
+      <img src="./assets/logo.png" alt="Logo" class="h-5 w-32" />
+
+      <div class="relative">
+        <!-- Ícone do carrinho com contador -->
+        <img src="./assets/cart-icon.png" alt="Cart" class="h-6 w-6" />
+        <div
+          class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#005cff] text-xs font-bold text-white"
+        >
+          2
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu dropdown para dispositivos móveis -->
+    <div
+      id="mobile-menu"
+      class="hidden absolute top-full left-0 z-50 w-64 rounded-lg bg-white shadow-lg"
+    >
+      <div class="flex items-center justify-between border-b p-4">
+        <!-- Cabeçalho do menu mobile -->
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button id="close-mobile-menu">
+          <img src="./assets/close-icon.png" alt="Close" class="h-6 w-6" />
+        </button>
+      </div>
+      <div class="max-h-[calc(100vh-200px)] overflow-y-auto">
+        <div>
+          <!-- Categoria principal -->
+          <button
+            class="flex w-full items-center justify-between border-b p-4 text-left"
+          >
+            <span>Eletrônicos</span>
+            <img src="./assets/caret-right.png" alt=">" class="h-4 w-4" />
+          </button>
+          <div class="hidden bg-gray-50">
+            <!-- Subcategorias -->
+            <button
+              class="block w-full border-b p-4 pl-8 text-left text-gray-600"
+            >
+              Smartphones
+            </button>
+            <button
+              class="block w-full border-b p-4 pl-8 text-left text-gray-600"
+            >
+              Notebooks
+            </button>
+            <!-- ...outras subcategorias... -->
+          </div>
+        </div>
+        <!-- ...outras categorias... -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de busca -->
+  <div class="px-4 pb-4">
+    <div class="relative w-full">
+      <!-- Campo de busca -->
+      <input
+        type="text"
+        placeholder="Digite aqui o que você procura"
+        class="w-full rounded-lg border border-[#dadada] px-4 py-3 text-base focus:outline-none"
+      />
+      <div class="absolute top-1/2 right-4 -translate-y-1/2 transform">
+        <img src="./assets/search-icon.png" alt="Search" class="h-6 w-6" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuButton = document.getElementById("mobile-menu-button")
+    const mobileMenu = document.getElementById("mobile-menu")
+    const closeMobileMenu = document.getElementById("close-mobile-menu")
+
+    // Abre o menu mobile
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.remove("hidden")
+    })
+
+    // Fecha o menu mobile
+    closeMobileMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden")
+    })
+  })
+</script>

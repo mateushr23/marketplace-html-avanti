@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avanti Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./header.js" defer></script>
+    <script src="./carousel.js" defer></script>
+    <script src="./footer-mobile.js" defer></script>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="promotion-banner"></div>
+    <div id="carousel"></div>
+    <div id="mug"></div>
+    <div id="mug-pin"></div>
+    <div id="mug-duplicate"></div>
+    <div id="carousel-duplicate"></div>
+    <div id="newsletter"></div>
+    <div id="footer"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadHeader = () => {
+          // Verifica se é um dispositivo móvel
+          const isMobile = window.matchMedia("(max-width: 767px)").matches
+          const headerFile = isMobile ? "header-mobile.html" : "header.html"
+
+          fetch(headerFile)
+            .then((res) => res.text())
+            .then((data) => {
+              document.getElementById("header").innerHTML = data
+            })
+        }
+
+        const loadFooter = () => {
+          // Verifica se é um dispositivo móvel
+          const isMobile = window.matchMedia("(max-width: 767px)").matches
+          const footerFile = isMobile ? "footer-mobile.html" : "footer.html"
+
+          fetch(footerFile)
+            .then((res) => res.text())
+            .then((data) => {
+              document.getElementById("footer").innerHTML = data
+            })
+        }
+
+        // Adiciona debounce para melhorar a performance ao redimensionar a janela
+        let resizeTimer
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimer)
+          resizeTimer = setTimeout(() => {
+            loadHeader()
+            loadFooter()
+          }, 250)
+        })
+
+        loadHeader()
+        loadFooter()
+
+        // Carrega o banner promocional
+        fetch("promotion-banner.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("promotion-banner").innerHTML = data
+          })
+
+        // Carrega o carrossel
+        fetch("carousel.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("carousel").innerHTML = data
+          })
+
+        // Carrega a seção de canecas
+        fetch("mug.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("mug").innerHTML = data
+          })
+
+        // Carrega a seção de canecas com pinos
+        fetch("mug-pin.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("mug-pin").innerHTML = data
+          })
+
+        // Carrega uma duplicata da seção de canecas
+        fetch("mug.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("mug-duplicate").innerHTML = data
+          })
+
+        // Carrega uma duplicata do carrossel
+        fetch("carousel.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("carousel-duplicate").innerHTML = data
+          })
+
+        // Carrega a seção de newsletter
+        fetch("newsletter.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("newsletter").innerHTML = data
+          })
+      })
+    </script>
+  </body>
+</html>
