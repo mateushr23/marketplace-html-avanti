@@ -13,7 +13,7 @@
     <div class="flex items-center justify-between px-4 py-3">
       <!-- Botão para abrir o menu mobile -->
       <button id="mobile-menu-button" class="p-1">
-        <img src="./assets/menu-icon.png" alt="Menu" class="h-6 w-6" />
+        <img src="./assets/prateleira.png" alt="Menu" class="h-4 w-5" />
       </button>
 
       <!-- Logo da empresa -->
@@ -38,9 +38,7 @@
       <div class="flex items-center justify-between border-b p-4">
         <!-- Cabeçalho do menu mobile -->
         <h2 class="text-xl font-bold">Menu</h2>
-        <button id="close-mobile-menu">
-          <img src="./assets/close-icon.png" alt="Close" class="h-6 w-6" />
-        </button>
+        <button id="close-mobile-menu">X</button>
       </div>
       <div class="max-h-[calc(100vh-200px)] overflow-y-auto">
         <div>
@@ -49,22 +47,36 @@
             class="flex w-full items-center justify-between border-b p-4 text-left"
           >
             <span>Eletrônicos</span>
-            <img src="./assets/caret-right.png" alt=">" class="h-4 w-4" />
+            <!-- ADICIONE estas classes para poder rotacionar o ícone -->
+            <img
+              src="./assets/caret-right.png"
+              alt=">"
+              class="h-3 w-2 transform transition-transform duration-200"
+            />
           </button>
-          <div class="hidden bg-gray-50">
-            <!-- Subcategorias -->
-            <button
-              class="block w-full border-b p-4 pl-8 text-left text-gray-600"
-            >
-              Smartphones
-            </button>
-            <button
-              class="block w-full border-b p-4 pl-8 text-left text-gray-600"
-            >
-              Notebooks
-            </button>
-            <!-- ...outras subcategorias... -->
-          </div>
+
+          <button
+            class="flex w-full items-center justify-between border-b p-4 text-left"
+          >
+            <span>Eletrônicos</span>
+            <!-- ADICIONE estas classes para poder rotacionar o ícone -->
+            <img
+              src="./assets/caret-right.png"
+              alt=">"
+              class="h-3 w-2 transform transition-transform duration-200"
+            />
+          </button>
+          <button
+            class="flex w-full items-center justify-between border-b p-4 text-left"
+          >
+            <span>Eletrônicos</span>
+            <!-- ADICIONE estas classes para poder rotacionar o ícone -->
+            <img
+              src="./assets/caret-right.png"
+              alt=">"
+              class="h-3 w-2 transform transition-transform duration-200"
+            />
+          </button>
         </div>
         <!-- ...outras categorias... -->
       </div>

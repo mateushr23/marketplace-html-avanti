@@ -27,26 +27,72 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const loadHeader = () => {
-          // Verifica se é um dispositivo móvel
           const isMobile = window.matchMedia("(max-width: 767px)").matches
           const headerFile = isMobile ? "header-mobile.html" : "header.html"
 
           fetch(headerFile)
             .then((res) => res.text())
             .then((data) => {
-              document.getElementById("header").innerHTML = data
+              const headerContainer = document.getElementById("header")
+              headerContainer.innerHTML = data
+
+              // === AQUI: set up do menu mobile logo após injetar o HTML ===
+              const btn = headerContainer.querySelector("#mobile-menu-button")
+              const menu = headerContainer.querySelector("#mobile-menu")
+              const close = headerContainer.querySelector("#close-mobile-menu")
+
+              if (btn && menu && close) {
+                btn.addEventListener("click", () =>
+                  menu.classList.remove("hidden")
+                )
+                close.addEventListener("click", () =>
+                  menu.classList.add("hidden")
+                )
+              }
             })
         }
-
         const loadFooter = () => {
-          // Verifica se é um dispositivo móvel
           const isMobile = window.matchMedia("(max-width: 767px)").matches
           const footerFile = isMobile ? "footer-mobile.html" : "footer.html"
 
           fetch(footerFile)
             .then((res) => res.text())
             .then((data) => {
-              document.getElementById("footer").innerHTML = data
+              const footerContainer = document.getElementById("footer")
+              footerContainer.innerHTML = data
+
+              // inicializa accordions
+              const toggles =
+                footerContainer.querySelectorAll(".toggle-section")
+              toggles.forEach((button) => {
+                const sectionId = button.getAttribute("data-section")
+                const content = footerContainer.querySelector(`#${sectionId}`)
+                const icon = button.querySelector(".accordion-icon")
+
+                button.addEventListener("click", (e) => {
+                  // fecha todas as seções
+                  e.stopPropagation()
+
+                  // checa se já estava aberta
+                  const isOpen = !content.classList.contains("hidden")
+
+                  // fecha todas as seções
+                  footerContainer
+                    .querySelectorAll(".section-content")
+                    .forEach((el) => el.classList.add("hidden"))
+
+                  // reseta todas as rotações dos carets
+                  footerContainer
+                    .querySelectorAll(".accordion-icon")
+                    .forEach((img) => img.classList.remove("rotate-180"))
+
+                  // se ela NÃO estava aberta, então abrimos (caso contrário, deixamos tudo fechado)
+                  if (!isOpen) {
+                    content.classList.remove("hidden")
+                    icon.classList.add("rotate-180")
+                  }
+                })
+              })
             })
         }
 
